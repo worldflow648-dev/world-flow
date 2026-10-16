@@ -1,0 +1,1 @@
+ALTER TABLE product_addons ADD COLUMN deposit_price numeric DEFAULT 0;

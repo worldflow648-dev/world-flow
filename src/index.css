@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium iOS-Style Design System - RTL Arabic Theme */
+
+@layer base {
+  :root {
+    /* Soft Slate Background for cards to pop */
+    --background: 210 40% 98%;
+    --foreground: 224 71% 4%;
+
+    /* Pure white cards */
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+
+    /* Deep Royal Blue Primary - #4F46E5 (Indigo 600) */
+    --primary: 243 75% 59%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Soft secondary */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 224 71% 4%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 220 14% 96%;
+    --accent-foreground: 224 71% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Softer borders */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 243 75% 59%;
+
+    --radius: 1rem;
+
+    /* Custom Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Deep Indigo for prices - #3730A3 (Indigo 800) */
+    --price: 245 58% 51%;
+
+    /* Premium Gradients */
+    --gradient-primary-from: 243 75% 59%;
+    --gradient-primary-to: 271 81% 56%;
+    --gradient-success-from: 142 76% 36%;
+    --gradient-success-to: 158 64% 52%;
+    --gradient-premium-from: 38 92% 50%;
+    --gradient-premium-to: 25 95% 53%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 243 75% 59%;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 243 75% 59%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 28% 17%;
+    --muted-foreground: 218 11% 65%;
+
+    --accent: 215 28% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 216 34% 17%;
+    
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    --price: 224 76% 80%;
+
+    /* Premium Gradients - Dark */
+    --gradient-primary-from: 243 75% 65%;
+    --gradient-primary-to: 271 81% 62%;
+    --gradient-success-from: 142 76% 42%;
+    --gradient-success-to: 158 64% 58%;
+    --gradient-premium-from: 38 92% 55%;
+    --gradient-premium-to: 25 95% 58%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 243 75% 59%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    direction: rtl;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Tajawal', sans-serif;
+  }
+}
+
+@layer utilities {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Premium shadow utilities */
+  .shadow-card {
+    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+  }
+
+  .shadow-elevated {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  }
+
+  .shadow-float {
+    box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 20px 0 hsl(var(--primary) / 0.3);
+  }
+
+  .shadow-glow-success {
+    box-shadow: 0 0 20px 0 hsl(var(--success) / 0.3);
+  }
+
+  /* Text color for prices */
+  .text-price {
+    color: hsl(var(--price));
+  }
+
+  /* Gradient text utility */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--gradient-primary-from)), hsl(var(--gradient-primary-to)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-premium {
+    background: linear-gradient(135deg, hsl(var(--gradient-premium-from)), hsl(var(--gradient-premium-to)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Premium gradient backgrounds */
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--gradient-primary-from)), hsl(var(--gradient-primary-to)));
+  }
+
+  .bg-gradient-success {
+    background: linear-gradient(135deg, hsl(var(--gradient-success-from)), hsl(var(--gradient-success-to)));
+  }
+
+  .bg-gradient-premium {
+    background: linear-gradient(135deg, hsl(var(--gradient-premium-from)), hsl(var(--gradient-premium-to)));
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .dark .glass {
+    background: rgba(17, 24, 39, 0.85);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+  }
+
+  .dark .glass-strong {
+    background: rgba(17, 24, 39, 0.95);
+  }
+
+  /* Interactive press effect */
+  .press-effect {
+    @apply transition-transform duration-150 active:scale-95;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Premium shimmer skeleton */
+  .skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 25%,
+      hsl(var(--muted-foreground) / 0.1) 50%,
+      hsl(var(--muted)) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Gradient mesh background */
+  .gradient-mesh {
+    background: 
+      radial-gradient(at 40% 20%, hsl(var(--primary) / 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsl(271 81% 56% / 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsl(var(--primary) / 0.1) 0px, transparent 50%);
+  }
+
+  /* Draw check animation for SVG */
+  .draw-check-path {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: draw-check 0.5s ease-out forwards;
+  }
+
+  /* Success ring pulse */
+  .success-ring {
+    animation: pulse-subtle 2s ease-in-out infinite;
+  }
+}
